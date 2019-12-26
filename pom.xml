@@ -3,21 +3,22 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>mule-deploy</artifactId>
+	<artifactId>maven-deploy</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
-	<name>mule-deploy</name>
+	<name>maven-deploy</name>
  
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<username>self_study</username>
-		<password>Thatwhat@321</password>
+		<username>apisero-connector-3</username>
+		<password>Apisero@123</password>
 		<app.runtime>4.2.1</app.runtime>
-		<cloudhub.application.name>mule-deploy</cloudhub.application.name>
+		<cloudhub.application.name>maven-deploy-mock</cloudhub.application.name>
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
 		<environment>Sandbox</environment>
+		<http.port>8081</http.port>
 	<munit.version>2.1.5</munit.version>
     </properties>
 
@@ -39,14 +40,17 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment> 
-						<muleVersion>4.2.2</muleVersion>
-						<username>self_study</username>
-						<password>Thatwhat@321</password>
-						<applicationName>mule-deploy</applicationName>
-						<environment>Sandbox</environment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<username>${username}</username>
+						<password>${password}</password>
+						<applicationName>${cloudhub.application.name}</applicationName>
+						<environment>${environment}</environment>
+						<properties>
+							 <http.port>${http.port}</http.port>
+						</properties>
 						<workers>1</workers>
-						<workerType>Micro</workerType>
-						
+						<workerType>MICRO</workerType>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
