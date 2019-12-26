@@ -18,7 +18,6 @@
 		<cloudhub.application.name>mule-deploy</cloudhub.application.name>
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
 		<environment>Sandbox</environment>
-		<http.port>8081</http.port>
 	<munit.version>2.1.5</munit.version>
     </properties>
 
@@ -40,17 +39,14 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment> 
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>${app.runtime}</muleVersion>
-						<username>${username}</username>
-						<password>${password}</password>
-						<applicationName>${cloudhub.application.name}</applicationName>
-						<environment>${environment}</environment>
-						<properties>
-							 <http.port>${http.port}</http.port>
-						</properties>
+						<muleVersion>4.2.2</muleVersion>
+						<username>self_study</username>
+						<password>Thatwhat@321</password>
+						<applicationName>mule-deploy</applicationName>
+						<environment>Sandbox</environment>
 						<workers>1</workers>
-						<workerType>MICRO</workerType>
+						<workerType>Micro</workerType>
+						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
