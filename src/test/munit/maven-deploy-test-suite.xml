@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="maven-deploy-test-suite.xml" />
+	<munit:test name="maven-deploy-test-suite-maven-deployFlowTest" description="Test" doc:id="fae03f2d-600d-458e-adb2-ec7f75dc7af5" >
+		<munit:behavior >
+			<set-variable value="application is deployed on cloudhub and this for test" doc:name="Set Variable" doc:id="1488ff19-6ed5-4506-b309-49d41c47a9fb" variableName="payload"/>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to maven-deployFlow" doc:id="6ceca46c-2720-4fb5-bbbc-a7552bbf30ad" name="maven-deployFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="89a6148d-53fe-4f46-ad9c-9a6765123edb" expression="#[payload]" is='#[MunitTools::equalTo(vars.payload)]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
