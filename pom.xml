@@ -12,9 +12,9 @@
 	<properties> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<username>apisero-connector-3</username>
-		<password>Apisero@123</password>
-		<app.runtime>4.2.1</app.runtime>
+		<username>self_study</username>
+		<password>Thatwhat@321</password>
+		<app.runtime>4.2.2</app.runtime>
 		<cloudhub.application.name>mule-deploy</cloudhub.application.name>
 		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
 		<environment>Sandbox</environment>
